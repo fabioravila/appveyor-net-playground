@@ -2,7 +2,8 @@ version: 0.5.{build}
 build:
   verbosity: minimal
 
-configuration: release
+configuration: 
+  Release 
 
 deploy:
   release: rivescript-csharp-v$(appveyor_build_version)
