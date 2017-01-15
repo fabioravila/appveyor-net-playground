@@ -1,18 +1,18 @@
 version: 0.5.{build}
 build:
   verbosity: minimal
-  
+
 configuration: release
 
 deploy:
   release: rivescript-csharp-v$(appveyor_build_version)
   description: 'release test'
-  - provider: GitHub
-    auth_token:
-      secure: tnpXG4U6beBgGakug5zPLyI1Fe7lcLHialJw4+FTvJdJ5JQ0T2Q79xP/Gnl5/JqH # your encrypted token from GitHub
-    artifact: bin\$(configuration)\AppVeyor.Playground.exe                     # upload all NuGet packages to release assets
-    draft: true
-    prerelease: false
-    on:
-      branch: master                 # release from master branch only
-      appveyor_repo_tag: true        # deploy on tag push only
+  provider: GitHub
+  auth_token:
+    secure: tnpXG4U6beBgGakug5zPLyI1Fe7lcLHialJw4+FTvJdJ5JQ0T2Q79xP/Gnl5/JqH # your encrypted token from GitHub
+  artifact: bin\$(configuration)\AppVeyor.Playground.exe                     # upload all NuGet packages to release assets
+  draft: true
+  prerelease: false
+  on:
+    branch: master                 # release from master branch only
+    appveyor_repo_tag: true        # deploy on tag push only
